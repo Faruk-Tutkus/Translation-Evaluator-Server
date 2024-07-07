@@ -101,7 +101,7 @@ document.getElementById('evaluate').addEventListener('click', async (event) => {
 })
 var value = 0
 document.getElementById('proficiencyRange').addEventListener('input', function() {
-  level = parseInt(this.value);
+  value = parseInt(this.value);
   console.log(value)
 });
 document.getElementById('generate').addEventListener('click', async (event) => {

@@ -99,9 +99,36 @@ document.getElementById('evaluate').addEventListener('click', async (event) => {
       document.getElementById('translatedLanguage').animate(shakeAnim,shakeTiming)
     }
 })
+var value = 0
+document.getElementById('proficiencyRange').addEventListener('input', function() {
+  level = parseInt(this.value);
+  console.log(value)
+});
 document.getElementById('generate').addEventListener('click', async (event) => {
   event.preventDefault();
-  const level = 'B1'
+  
+  var level = 'A1'
+  switch (value) {
+    case value == 0:
+      level = 'A1'
+      break;
+    case value == 1:
+      level = 'A2'
+      break;
+    case value == 2:
+      level = 'B1'
+      break;
+    case value == 3:
+      level = 'A2'
+      break;
+    case value == 4:
+      level = 'C1'
+      break;
+    case value == 5:
+      level = 'C2'
+      break;
+
+  }
   const original = document.getElementById('originalLanguage');
   const originalLanguage = original.options[original.selectedIndex].text;
   const topic = topics[Math.floor(Math.random() * topics.length)];

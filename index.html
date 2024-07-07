@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .italic {
+            font-style: italic;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form id="translationForm">
+        <h1>Translation Evaluator</h1>
+        <p id="warning"></p>
+        <div id="top">
+            <textarea type="text" id="originalText" placeholder="Original"></textarea>
+            <select name="originalLanguage" id="originalLanguage">
+                <option value="Arabic">Arabic</option>
+                <option value="Chinese (Simplified)">Chinese (Simplified)</option>
+                <option value="English" selected>English</option>
+                <option value="French">French</option>
+                <option value="German">German</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Italian">Italian</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Korean">Korean</option>
+                <option value="Portuguese">Portuguese</option>
+                <option value="Russian">Russian</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Turkish">Turkish</option>
+            </select>
+        </div>
+        <div id="bot">
+            <textarea id="translatedText" type="text" placeholder="Tranlation"></textarea>
+            <select name="translatedLanguage" id="translatedLanguage">
+                <option value="Arabic">Arabic</option>
+                <option value="Chinese (Simplified)">Chinese (Simplified)</option>
+                <option value="English">English</option>
+                <option value="French">French</option>
+                <option value="German">German</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Italian">Italian</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Korean">Korean</option>
+                <option value="Portuguese">Portuguese</option>
+                <option value="Russian">Russian</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Turkish" selected>Turkish</option>
+            </select>
+        </div>
+        <div id="buttons">
+            <input type="button" id="generate" value="Generate a sentence" >
+            <input type="button" id="evaluate" value="Evaluate the sentence">
+        </div>
+        <p id="info">Info</p>
+    </form>
+    <script src="topics.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

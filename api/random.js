@@ -31,8 +31,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 export default async function handler(req, res) {
-  const { level, topic } = req.body;
-  const prompt = `write a random at ${level} level sentence about ${topic} in english, just one sentence without translation`
+  const { level, topic, originallanguage } = req.body;
+  const prompt = `write a random at ${level} level sentence about ${topic} in ${originallanguage}, just one sentence without translation`
 
   const result = await model_random.generateContent(prompt, generationConfig);
   const response = result.response.text();

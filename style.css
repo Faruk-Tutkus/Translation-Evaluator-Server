@@ -19,7 +19,7 @@ body {
     width: 80%;
     max-width: 800px;
     text-align: center;
-    transition: 1s;
+    transition: background 0.3s;
     margin-bottom: 20px;
     position: relative;
 }
@@ -64,6 +64,73 @@ body {
 
 .dark-mode-switch input[type="checkbox"]:checked + label::after {
     left: 27px;
+}
+
+.slider-container {
+    margin: 20px 0;
+    text-align: left;
+    position: relative;
+}
+
+.slider-container label {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #515151;
+}
+
+.slider-container input[type="range"] {
+    width: calc(100% - 80px);
+    margin: 10px 40px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    background: linear-gradient(to right, #444, #ccc);
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s, background 0.3s;
+    border-radius: 25px;
+}
+#proficiencySlider {
+    font-size: 28px;
+    margin-right: 10px;
+    color: #515151;
+}
+.slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #d9d8d8;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+    
+}
+
+.slider-container input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+    
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 40px;
+    
+}
+
+.slider-labels span {
+    font-size: 14px;
+    color: #515151;
+    cursor: pointer;
+    transition: color 0.3s, font-weight 0.3s;
 }
 
 #top, #bot {
@@ -128,17 +195,26 @@ body.dark-mode #translationForm {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.47);
 }
 
-body.dark-mode textarea, body.dark-mode select, body.dark-mode input[type="button"] {
+body.dark-mode textarea, body.dark-mode select, body.dark-mode input[type="button"], body.dark-mode .slider-container input[type="range"] {
     background-color: #444;
     color: #f4f4f4;
-    border: 1px solid #666;
+    border: 1px solid #555;
 }
 
-body.dark-mode input[type="button"]:hover {
+body.dark-mode input[type="button"]:hover, body.dark-mode {
     background-color: #f4f4f4;
     color: #444;
 }
 
-body.dark-mode h1 {
+body.dark-mode h1, body.dark-mode .slider-labels span {
+    color: #f4f4f4;
+}
+
+body.dark-mode .slider-container input[type="range"] {
+    background: linear-gradient(to right, #f4f4f4, #444);
+    transition: background 0.3s;
+}
+
+body.dark-mode #proficiencySlider {
     color: #f4f4f4;
 }

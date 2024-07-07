@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Translation Evaluator</title>
 </head>
 <body>
     <form id="translationForm">
@@ -13,6 +13,18 @@
             <label for="toggleDarkMode"></label>
         </div>
         <h1>Translation Evaluator</h1>
+        <div class="slider-container">
+            <h1 id="proficiencySlider" style="text-align: center;">Level</h1>
+            <input type="range" id="proficiencyRange" name="proficiency" min="0" max="5" step="1" value="0">
+            <div class="slider-labels">
+                <span data-value="0">A1</span>
+                <span data-value="1">A2</span>
+                <span data-value="2">B1</span>
+                <span data-value="3">B2</span>
+                <span data-value="4">C1</span>
+                <span data-value="5">C2</span>
+            </div>
+        </div>
         <p id="warning"></p>
         <div id="top">
             <textarea type="text" id="originalText" placeholder="Original"></textarea>
@@ -62,6 +74,26 @@
         document.getElementById('toggleDarkMode').addEventListener('change', function() {
             document.body.classList.toggle('dark-mode', this.checked);
         });
+
+        document.querySelectorAll('.slider-labels span').forEach(function(label, index) {
+            label.addEventListener('click', function() {
+                document.getElementById('proficiencyRange').value = index;
+                document.getElementById('proficiencyRange').dispatchEvent(new Event('input'));
+            });
+        });
+
+        document.getElementById('proficiencyRange').addEventListener('input', function() {
+            let value = parseInt(this.value);
+            document.querySelectorAll('.slider-labels span').forEach(function(label, index) {
+                if (index === value) {
+                    label.style.fontWeight = 'bold';
+                } else {
+                    label.style.color = '';
+                    label.style.fontWeight = '';
+                }
+            });
+        });
     </script>
 </body>
 </html>
+

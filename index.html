@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .italic {
-            font-style: italic;
-        }
-    </style>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <form id="translationForm">
+        <div class="dark-mode-switch">
+            <input type="checkbox" id="toggleDarkMode">
+            <label for="toggleDarkMode"></label>
+        </div>
         <h1>Translation Evaluator</h1>
         <p id="warning"></p>
         <div id="top">
@@ -34,7 +33,7 @@
             </select>
         </div>
         <div id="bot">
-            <textarea id="translatedText" type="text" placeholder="Tranlation"></textarea>
+            <textarea id="translatedText" type="text" placeholder="Translation"></textarea>
             <select name="translatedLanguage" id="translatedLanguage">
                 <option value="Arabic">Arabic</option>
                 <option value="Chinese (Simplified)">Chinese (Simplified)</option>
@@ -52,12 +51,17 @@
             </select>
         </div>
         <div id="buttons">
-            <input type="button" id="generate" value="Generate a sentence" >
+            <input type="button" id="generate" value="Generate a sentence">
             <input type="button" id="evaluate" value="Evaluate the sentence">
         </div>
-        <p id="info">Info</p>
+        <p id="info"></p>
     </form>
     <script src="topics.js"></script>
     <script src="index.js"></script>
+    <script>
+        document.getElementById('toggleDarkMode').addEventListener('change', function() {
+            document.body.classList.toggle('dark-mode', this.checked);
+        });
+    </script>
 </body>
 </html>

@@ -6,25 +6,72 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Use min-height instead of height */
-    overflow-y: auto; /* Enable vertical scrolling if needed */
+    min-height: 100vh;
+    overflow-y: auto;
+    transition: background-color 0.3s, color 0.3s;
 }
+
 #translationForm {
     background: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px #38373777;
+    box-shadow: 0 2px 10px rgba(56, 55, 55, 0.47);
     width: 80%;
     max-width: 800px;
     text-align: center;
     transition: 1s;
-    margin-bottom: 20px; /* Add margin-bottom to ensure it doesn't stick to the bottom edge */
+    margin-bottom: 20px;
+    position: relative;
 }
+
+.dark-mode-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.dark-mode-switch input[type="checkbox"] {
+    display: none;
+}
+
+.dark-mode-switch label {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    background: #ccc;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dark-mode-switch label::after {
+    content: '';
+    display: block;
+    width: 21px;
+    height: 21px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s;
+}
+
+.dark-mode-switch input[type="checkbox"]:checked + label {
+    background: #444;
+}
+
+.dark-mode-switch input[type="checkbox"]:checked + label::after {
+    left: 27px;
+}
+
 #top, #bot {
     display: flex;
     justify-content: center;
     margin: 10px;
 }
+
 textarea {
     width: 100%;
     height: 75px;
@@ -38,6 +85,7 @@ textarea {
     text-align: center;
     color: #515151;
 }
+
 select {
     padding: 10px;
     border: 1px solid #ccc;
@@ -47,6 +95,7 @@ select {
     text-align: center;
     color: #515151;
 }
+
 input[type="button"] {
     padding: 10px 20px;
     border: none;
@@ -58,17 +107,38 @@ input[type="button"] {
     transition: background 0.3s;
     margin: 10px;
 }
+
 input[type="button"]:hover {
     background-color: #ccc;
     color: #515151;
 }
+
 h1 {
     color: #515151;
 }
-@keyframes shake {
-    0% { transform: translateX(0) }
-    25% { transform: translateX(5px) }
-    50% { transform: translateX(-5px) }
-    75% { transform: translateX(5px) }
-    100% { transform: translateX(0) }
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+    color: #f4f4f4;
+}
+
+body.dark-mode #translationForm {
+    background: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.47);
+}
+
+body.dark-mode textarea, body.dark-mode select, body.dark-mode input[type="button"] {
+    background-color: #444;
+    color: #f4f4f4;
+    border: 1px solid #666;
+}
+
+body.dark-mode input[type="button"]:hover {
+    background-color: #f4f4f4;
+    color: #444;
+}
+
+body.dark-mode h1 {
+    color: #f4f4f4;
 }

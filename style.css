@@ -6,7 +6,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Use min-height instead of height */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
 }
 #translationForm {
     background: #fff;
@@ -14,10 +15,10 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 10px #38373777;
     width: 80%;
-    height: 90%;
     max-width: 800px;
     text-align: center;
     transition: 1s;
+    margin-bottom: 20px; /* Add margin-bottom to ensure it doesn't stick to the bottom edge */
 }
 #top, #bot {
     display: flex;

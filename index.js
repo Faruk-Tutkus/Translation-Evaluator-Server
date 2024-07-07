@@ -99,36 +99,30 @@ document.getElementById('evaluate').addEventListener('click', async (event) => {
       document.getElementById('translatedLanguage').animate(shakeAnim,shakeTiming)
     }
 })
-var value = 0
-document.getElementById('proficiencyRange').addEventListener('input', function() {
-  value = parseInt(this.value);
-  console.log(value)
-});
+
 document.getElementById('generate').addEventListener('click', async (event) => {
   event.preventDefault();
-  
-  var level = 'A1'
-  switch (value) {
-    case value == 0:
-      level = 'A1'
-      break;
-    case value == 1:
-      level = 'A2'
-      break;
-    case value == 2:
-      level = 'B1'
-      break;
-    case value == 3:
-      level = 'A2'
-      break;
-    case value == 4:
-      level = 'C1'
-      break;
-    case value == 5:
-      level = 'C2'
-      break;
-
+  const value = document.getElementById('proficiencyRange').value
+  let level = 'A1'
+  if (value == '0') {
+    level = 'A1'
   }
+  else if (value == '1') {
+    level = 'A2'
+  }
+  else if (value == '2') {
+    level = 'B1'
+  }
+  else if (value == '3') {
+    level = 'B2'
+  }
+  else if (value == '4') {
+    level = 'C1'
+  }
+  else if (value == '5') {
+    level = 'C2'
+  }
+  console.log(level, value)
   const original = document.getElementById('originalLanguage');
   const originalLanguage = original.options[original.selectedIndex].text;
   const topic = topics[Math.floor(Math.random() * topics.length)];

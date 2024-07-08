@@ -218,3 +218,6 @@ body.dark-mode .slider-container input[type="range"] {
 body.dark-mode #proficiencySlider {
     color: #f4f4f4;
 }
+body.dark-mode p {
+    color: #f4f4f4;
+}

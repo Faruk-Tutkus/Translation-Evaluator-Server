@@ -25,8 +25,13 @@ app.use(bodyParser.json());
 
 export default async function handler(req, res) {
   const { level, topic, originalLanguage } = req.body;
-  const prompt = `write a random at ${level} level sentence about ${topic} in ${originalLanguage}, just one sentence without translation`
-
+  let prompt = ''
+  if (level == 'A1' || level == 'A2' || level == 'B1') {
+    prompt = `write a random at ${level} level sentence about ${topic} in ${originalLanguage} using basic vocabulary, just one sentence without translation.`
+  }
+  else if (level == 'B2' || level == 'C1' || level == 'C2') {
+    prompt = `write a random at ${level} level sentence about ${topic} in ${originalLanguage} using advanced vocabulary, just one sentence without translation.`
+  }
   const result = await model_random.generateContent(prompt, generationConfig);
   const response = result.response.text();
   console.log(response);

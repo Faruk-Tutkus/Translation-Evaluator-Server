@@ -103,6 +103,7 @@ document.getElementById('evaluate').addEventListener('click', async (event) => {
 document.getElementById('generate').addEventListener('click', async (event) => {
   event.preventDefault();
   const value = document.getElementById('proficiencyRange').value
+  document.getElementById('translatedText').value = ''
   let level = 'A1'
   if (value == '0') {
     level = 'A1'

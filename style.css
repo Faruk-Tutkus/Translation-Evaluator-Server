@@ -183,11 +183,13 @@ input[type="button"]:hover {
 h1 {
     color: #515151;
 }
-
+p {
+    color: #515151;
+}
 /* Dark Mode Styles */
 body.dark-mode {
     background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
-    color: #f4f4f4;
+    color: #ccc;
 }
 
 body.dark-mode #translationForm {
@@ -197,27 +199,27 @@ body.dark-mode #translationForm {
 
 body.dark-mode textarea, body.dark-mode select, body.dark-mode input[type="button"], body.dark-mode .slider-container input[type="range"] {
     background-color: #444;
-    color: #f4f4f4;
+    color: #ccc;
     border: 1px solid #555;
 }
 
 body.dark-mode input[type="button"]:hover, body.dark-mode {
-    background-color: #f4f4f4;
+    background-color: #ccc;
     color: #444;
 }
 
 body.dark-mode h1, body.dark-mode .slider-labels span {
-    color: #f4f4f4;
+    color: #ccc;
 }
 
 body.dark-mode .slider-container input[type="range"] {
-    background: linear-gradient(to right, #f4f4f4, #444);
+    background: linear-gradient(to right, #ccc, #444);
     transition: background 0.3s;
 }
 
 body.dark-mode #proficiencySlider {
-    color: #f4f4f4;
+    color: #ccc;
 }
 body.dark-mode p {
-    color: #f4f4f4;
+    color: #ccc;
 }

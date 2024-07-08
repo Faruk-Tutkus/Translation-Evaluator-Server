@@ -8,6 +8,7 @@ body {
     align-items: center;
     min-height: 100vh;
     overflow-y: auto;
+    flex-direction: column; /* Ensure elements stack vertically */
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -21,7 +22,13 @@ body {
     text-align: center;
     transition: background 0.3s;
     margin-bottom: 20px;
+    margin-top: 50px;
     position: relative;
+}
+
+.below-form {
+    width: 80%;
+    max-width: 800px;
 }
 
 .dark-mode-switch {
@@ -216,8 +223,10 @@ body.dark-mode .slider-container input[type="range"] {
     background: linear-gradient(to right, #ccc, #444);
     transition: background 0.3s;
 }
-
 body.dark-mode #proficiencySlider {
+    color: #ccc;
+}
+body.dark-mode li {
     color: #ccc;
 }
 body.dark-mode p {

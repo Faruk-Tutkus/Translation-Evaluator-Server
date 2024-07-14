@@ -27,7 +27,7 @@ export default async function handler(req, res) {
   const { level, topic, originalLanguage } = req.body;
   let prompt = ''
   let rand_promt_num = Math.floor(Math.random() * 3);
-  if (level == 'A1' || level == 'A2' || level == 'B1') {
+  if (level == 'A1' || level == 'A2' || level == 'B1' || level == 'B2') {
     if (rand_promt_num == 0) {
      prompt = `write a random at ${level} level sentence about ${topic} in ${originalLanguage} using basic vocabulary, just one sentence without translation.` 
     }
@@ -38,7 +38,7 @@ export default async function handler(req, res) {
       prompt = `give a random at ${level} level sentence ${topic} in ${originalLanguage} using basic vocabulary, just one sentence without translation.`
     }
   }
-  else if (level == 'B2' || level == 'C1' || level == 'C2') {
+  else if (level == 'C1' || level == 'C2') {
     prompt = `write a random at ${level} level sentence about ${topic} in ${originalLanguage} using advanced vocabulary, just one sentence without translation.`
   }
   const result = await model_random.generateContent(prompt, generationConfig);

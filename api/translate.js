@@ -14,7 +14,7 @@ const apiKey = process.env.API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model_score = genAI.getGenerativeModel({
-  model: "gemini-1.5-pro",
+  model: "gemini-1.5-flash",
   systemInstruction: "give a percentage score, like a native, for how accurately it translates the given original sentence.",
 });
 

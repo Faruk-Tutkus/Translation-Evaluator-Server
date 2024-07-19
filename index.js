@@ -140,8 +140,6 @@ document.getElementById('generate').addEventListener('click', async (event) => {
     console.log(info);
 
     const text = info.response
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/"([^"]*)"/g, '<span class="italic">"$1"</span>')
     document.getElementById('originalText').value = ''
     count_2 = 0
     interval_2 = setInterval(WriteOriginalText, 10, text, 'originalText')

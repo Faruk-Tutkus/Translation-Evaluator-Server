@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KHMZPED48H"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-KHMZPED48H');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KHMZPED48H');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +23,7 @@
         </div>
         <h1>Translation Evaluator</h1>
         <div class="slider-container">
-            <h1 id="proficiencySlider" style="text-align: center;">Level</h1>
+            <h2 id="proficiencySlider" style="text-align: center;">Level</h2>
             <input type="range" id="proficiencyRange" name="proficiency" min="0" max="5" step="1" value="0">
             <div class="slider-labels">
                 <span data-value="0">A1</span>
@@ -37,7 +36,7 @@
         </div>
         <p id="warning"></p>
         <div id="top">
-            <textarea type="text" id="originalText" placeholder="Original"></textarea>
+            <textarea id="originalText" placeholder="Original"></textarea>
             <select name="originalLanguage" id="originalLanguage">
                 <option value="Arabic">Arabic</option>
                 <option value="Chinese (Simplified)">Chinese (Simplified)</option>
@@ -55,7 +54,7 @@
             </select>
         </div>
         <div id="bot">
-            <textarea id="translatedText" type="text" placeholder="Translation"></textarea>
+            <textarea id="translatedText" placeholder="Translation"></textarea>
             <select name="translatedLanguage" id="translatedLanguage">
                 <option value="Arabic">Arabic</option>
                 <option value="Chinese (Simplified)">Chinese (Simplified)</option>
@@ -80,37 +79,35 @@
             <p id="info"></p>
         </div>    
     </form>
-    <div>
-        <footer>
-            <p style="font-size: 18px; text-align: center;">
-                This application is a web-based tool that allows users to perform text translations in different languages and evaluate the quality and accuracy of translations. Users can input both original and translated texts to assess the translation. Additionally, users can select their language proficiency levels.
-            </p>
-            <p style="font-size: 24px; text-align: center;">
-                Key Components
-                <ul style="font-size: 18px; color: #515151;">
-                    <li><strong>Level:</strong> Allows users to determine their language proficiency levels.</li>
-                    <li><strong>Language Selection:</strong> Choose one of the provided languages to perform translations.</li>
-                    <li><strong>Text Fields:</strong> Enter original and translated text to evaluate the translation. You don't need to randomly generate original text, you can also provide text manually.</li>
-                    <li><strong>Generate a sentence:</strong> Generates a random sentence.</li>
-                    <li><strong>Evaluate the sentence:</strong> Evaluates the translation of the generated sentence.</li>
-                </ul>
-            </p>
-            <p style="font-size: 24px; text-align: center;">
-                Usage
-                <ul style="font-size: 18px; color: #515151;">
-                    <li><strong>Select Language Proficiency Level:</strong> Use the proficiency slider to set your level. (you cannot choose the same two languages)</li>
-                    <li><strong>Enter Text:</strong> Enter the original text and translation, select languages.</li>
-                    <li><strong>Use Buttons:</strong> Generate a random sentence and evaluate the translation.</li>
-                </ul>
-            </p>
-            <p style="font-size: 18px; text-align: center;">
-                This application is an effective tool for language learners and translators, offering a user-friendly interface and functionalities.
-            </p>
-            <p style="font-size: 18px; text-align: center;">
-                Made by Faruk TUTKUS 
-            </p>
-        </footer>
-    </div>
+    <footer>
+        <p style="font-size: 18px; text-align: center;">
+            This application is a web-based tool that allows users to perform text translations in different languages and evaluate the quality and accuracy of translations. Users can input both original and translated texts to assess the translation. Additionally, users can select their language proficiency levels.
+        </p>
+        <p style="font-size: 24px; text-align: center;">
+            Key Components
+        </p>
+        <ul style="font-size: 18px; color: #515151;">
+            <li><strong>Level:</strong> Allows users to determine their language proficiency levels.</li>
+            <li><strong>Language Selection:</strong> Choose one of the provided languages to perform translations.</li>
+            <li><strong>Text Fields:</strong> Enter original and translated text to evaluate the translation. You don't need to randomly generate original text, you can also provide text manually.</li>
+            <li><strong>Generate a sentence:</strong> Generates a random sentence.</li>
+            <li><strong>Evaluate the sentence:</strong> Evaluates the translation of the generated sentence.</li>
+        </ul>
+        <p style="font-size: 24px; text-align: center;">
+            Usage
+        </p>
+        <ul style="font-size: 18px; color: #515151;">
+            <li><strong>Select Language Proficiency Level:</strong> Use the proficiency slider to set your level. (you cannot choose the same two languages)</li>
+            <li><strong>Enter Text:</strong> Enter the original text and translation, select languages.</li>
+            <li><strong>Use Buttons:</strong> Generate a random sentence and evaluate the translation.</li>
+        </ul>
+        <p style="font-size: 18px; text-align: center;">
+            This application is an effective tool for language learners and translators, offering a user-friendly interface and functionalities.
+        </p>
+        <p style="font-size: 18px; text-align: center;">
+            Made by Faruk TUTKUS 
+        </p>
+    </footer>
     <script src="topics.js"></script>
     <script src="index.js"></script>
     <script>
@@ -130,9 +127,10 @@
             document.querySelectorAll('.slider-labels span').forEach(function(label, index) {
                 if (index === value) {
                     label.style.fontWeight = 'bold';
+                    label.style.color = '#000';
                 } else {
-                    label.style.color = '';
                     label.style.fontWeight = '';
+                    label.style.color = '';
                 }
             });
         });

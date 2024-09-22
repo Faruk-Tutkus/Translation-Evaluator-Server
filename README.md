@@ -24,7 +24,7 @@ This project is a server-side application designed for evaluating translations b
 To run this project locally, you need to have the following installed:
 
 - [Node.js](https://nodejs.org/)
-- [Netlify CLI](https://docs.netlify.com/cli/get-started/)
+- [Vercel CLI](https://vercel.com/docs)
 - [Google Cloud API key](https://cloud.google.com/docs/authentication/getting-started)
 
 ### Installation

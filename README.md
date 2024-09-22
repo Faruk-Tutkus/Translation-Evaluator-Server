@@ -1,31 +1,35 @@
-# Node.js Hello World
+# Translation Evaluator Server
 
-Simple Node.js + Vercel example that returns a "Hello World" response.
+This project is a server-side application designed for evaluating translations based on language proficiency levels. It provides an API to assess the quality of translations from various languages using Google Cloud's Generative AI. The server is built with Node.js and Express, and it's deployed using serverless functions on Netlify.
 
-## How to Use
+## Features
 
-You can choose from one of the following two methods to use this repository:
+- Language proficiency evaluation using levels A1, A2, B1, B2, C1, C2.
+- Translation assessment powered by Google Cloud AI.
+- Dark mode toggle functionality for UI components.
+- Easy integration with front-end applications.
 
-### One-Click Deploy
+## Technology Stack
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+- **Node.js** - Server-side JavaScript runtime.
+- **Express.js** - Web framework for handling HTTP requests.
+- **Google Cloud AI** - Translation and language proficiency evaluation service.
+- **Netlify Functions** - Serverless functions for deployment.
+- **HTML/CSS/JavaScript** - For creating a responsive and modern front-end UI.
+  
+## Getting Started
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/examples/tree/main/solutions/node-hello-world&project-name=node-hello-world&repository-name=node-hello-world)
+### Prerequisites
 
-### Clone and Deploy
+To run this project locally, you need to have the following installed:
 
-```bash
-git clone https://github.com/vercel/examples/tree/main/solutions/node-hello-world
-```
+- [Node.js](https://nodejs.org/)
+- [Netlify CLI](https://docs.netlify.com/cli/get-started/)
+- [Google Cloud API key](https://cloud.google.com/docs/authentication/getting-started)
 
-Install the Vercel CLI:
+### Installation
 
-```bash
-npm i -g vercel
-```
-
-Then run the app at the root of the repository:
-
-```bash
-vercel dev
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Faruk-Tutkus/Translation-Evaluator-Server.git
+   cd Translation-Evaluator-Server

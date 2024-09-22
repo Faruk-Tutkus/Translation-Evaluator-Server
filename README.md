@@ -1,6 +1,6 @@
 # Translation Evaluator Server
 
-This project is a server-side application designed for evaluating translations based on language proficiency levels. It provides an API to assess the quality of translations from various languages using Google Cloud's Generative AI. The server is built with Node.js and Express, and it's deployed using serverless functions on Netlify.
+This project is a server-side application designed for evaluating translations based on language proficiency levels. It provides an API to assess the quality of translations from various languages using Google Cloud's Generative AI. The server is built with Node.js and Express, and it's deployed using serverless functions on Vercel.
 
 ## Features
 
